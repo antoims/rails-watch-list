@@ -1,0 +1,21 @@
+<h1>Bookmarks#new</h1>
+<p>Find me in app/views/bookmarks/new.html.erb</p>
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.input :comment %>
+  <%# appeler l'id du movie dans la DB %>
+  <%# collection pour tous les films %>
+  <%= f.input :movie_id, collection:@movies %>
+  <%= f.submit %>
+  <%# tout envoyer dans les params %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
