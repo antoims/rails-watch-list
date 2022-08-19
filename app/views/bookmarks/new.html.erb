@@ -4,18 +4,7 @@
   <%= f.input :comment %>
   <%# appeler l'id du movie dans la DB %>
   <%# collection pour tous les films %>
-  <%= f.input :movie_id, collection:@movies %>
+  <%= f.input :movie_id, collection: Movie.all %>
   <%= f.submit %>
   <%# tout envoyer dans les params %>
 <% end %>
-
-
-
-
-
-
-
-
-
-
-

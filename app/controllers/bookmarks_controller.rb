@@ -5,16 +5,16 @@ class BookmarksController < ApplicationController
     # faire un bookmark
     @bookmark = Bookmark.new
     # donner la liste des films pour la collection
-    @movies = Movie.all
+    # @movies = Movie.all
   end
 
   def create
     @bookmark = Bookmark.new(bookmarks_params)
     @bookmark.list = @list
-    if @bookmark.save!
+    if @bookmark.save
       redirect_to list_path(@list)
     else
-      render 'lists/show', status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
   # def create
