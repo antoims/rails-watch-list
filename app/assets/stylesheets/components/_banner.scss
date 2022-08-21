@@ -1,0 +1,31 @@
+.banner {
+  background-size:auto;
+  background-position:left;
+  background-repeat: no-repeat;
+  opacity: 90px;
+  padding: 8px 0;
+  height: 112px;
+  margin-bottom: 42px;
+  background-color: rgba(72, 72, 72, 0.1);
+    #img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+    }
+}
+
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}

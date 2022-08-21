@@ -1,17 +1,21 @@
+<div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<%= cl_image_path @list.photo.key if @list.photo.present?%>')" >
+  <div class="container">
+    <h1>Signets - <%= @list.name %> </h1>
+      <%= link_to "Ajouter un signet", new_list_bookmark_path(@list), class: "btn btn-secondary", id: "margin-top" %>
+      <%= link_to "Retour", lists_path, class: "btn btn-secondary", id: "margin-top" %>
+      <%= link_to "Supprimer la liste", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "êtes-vous sûr ?" }, class: "btn btn-secondary", id: "margin-top" %>
+  </div>
+</div>
 <div class="container">
-  <h2> <%= @list.name %> </h2>
-  <h4>Bookmarks</h4>
-  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-
-  <ul class='list-group'>
-    <% @list.bookmarks.each do |bookmark| %>
-      <li class='list-group-item'>
-        <%= bookmark.comment %> - <%= bookmark.movie.title%>
-        <%= bookmark.id %>
-        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete } %>
-      </li>
-    <% end %>
-  </ul>
-  <p> <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-success", id: "margin-top" %> </p>
-  
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-product">
+      <%= cl_image_tag bookmark.photo.key if bookmark.photo.present? %>
+      <div class="card-product-infos">
+        <h2> <%= bookmark.movie.title %> </h2>
+        <p> <%= bookmark.comment %> </p>
+      </div>
+      <%= link_to "Supprimer", bookmark_path(bookmark), data: { turbo_method: :delete }, class: "btn btn-light"%>
+    </div>
+  <% end %>
 </div>

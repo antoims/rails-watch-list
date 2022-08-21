@@ -8,10 +8,14 @@
 
 
 require "open-uri"
-Movie.create(title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
-Movie.create(title: "The Shawshank Redemption", overview: "Framed in the 1940s for double murder, upstanding banker Andy Dufresne begins a new life at the Shawshank prison", poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7)
-Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
-Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
+Movie.create(title: "STILLWATER", overview: "Film Suspense, États-Unis d'Amérique, 2021, 2h13", poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7)
+Movie.create(title: "House of Gucci", overview: "Film Drame, États-Unis d'Amérique, Canada, 2021, 2h31", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
+Movie.create(title: "Le Flambeau, les aventuriers de Chupacabra", overview: "Série Humour, Saison en 9 épisodes, France", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 10.0)
+Movie.create(title: "La Flamme", overview: "Série Humour, Saison en 9 épisodes, France", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 10.0)
+Movie.create(title: "Le roi lion", overview: "Film Animation, États-Unis d'Amérique, 2019, 2h07", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
+Movie.create(title: "Toy Story 4", overview: "Film Animation, États-Unis d'Amérique, 2019, 1h40", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
+Movie.create(title: "Canal Football Club", overview: "L'émission de référence du football est de retour, pilotée par son incontournable capitaine, Hervé Mathoux.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
+Movie.create(title: "Formule 1, France", overview: "Margot Laffite présente les actualités de la Formule 1. ", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 url = "https://tmdb.lewagon.com/movie/top_rated"
 movies = JSON.parse(URI.open(url).read)
 movies["results"].take(10).each do |movie|
@@ -23,4 +27,3 @@ movies["results"].take(10).each do |movie|
   )
   new_movie.save
 end
-
